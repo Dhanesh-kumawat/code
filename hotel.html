@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to [Hotel Name], a luxury boutique hotel in [City, Country]. Experience unparalleled comfort with our rooms, amenities, and services.">
+    <meta name="keywords" content="hotel, luxury, boutique, [City], [Country], rooms, amenities, booking">
+    <title>[Shri Mahakal Hotal] - Luxury Boutique Hotel in [City, Country]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f7f4;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-weight: 300;
+            color: #8b4513;
+        }
+        a {
+            text-decoration: none;
+            color: #d4af37;
+        }
+        a:hover {
+            color: #b8860b;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .btn {
+            background-color: #d4af37;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #b8860b;
+        }
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #8b4513;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: #333;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+        /* Hero Section */
+        .hero {
+            background-image: url('https://i.pinimg.com/originals/14/08/f3/1408f3e9406956eeca0d2cd0035027f8.jpg'); /* Replace with actual image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+        .highlights {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .highlight {
+            text-align: center;
+            margin: 20px;
+        }
+        .highlight i {
+            font-size: 48px;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+        /* Rooms */
+        .rooms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .room {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .room img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .room-content {
+            padding: 20px;
+        }
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* Contact */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Booking */
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer .social a {
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Simple mobile menu, can be enhanced */
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+        }
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">[Hotel Name]</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rooms">Rooms & Suites</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#booking">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero fade-in">
+        <div class="hero-content">
+            <h1>Welcome to [Hotel Name]</h1>
+            <p>Experience luxury and comfort in the heart of [City, Country].</p>
+            <button class="btn" onclick="scrollToSection('booking')">Book Now</button>
+        </div>
+    </section>
+
+    <section class="highlights container">
+        <div class="highlight">
+            <i class="fas fa-wifi"></i>
+            <h3>Free Wi-Fi</h3>
+        </div>
+        <div class="highlight">
+            <i class="fas fa-utensils"></i>
+            <h3>Restaurant</h3>
+        </div>
+        <div class="highlight">
+            <i class="fas fa-swimming-pool"></i>
+            <h3>Swimming Pool</h3>
+        </div>
+        <div class="highlight">
+            <i class="fas fa-parking"></i>
+            <h3>Parking</h3>
+        </div>
+        <div class="highlight">
+            <i class="fas fa-clock"></i>
+            <h3>24/7 Service</h3>
+        </div>
+    </section>
+
+    <section id="rooms" class="container">
+        <h2>Rooms & Suites</h2>
+        <div class="rooms">
+            <div class="room">
+                <img src="" alt="Deluxe Room">
+                <div class="room-content">
+                    <h3>Deluxe Room</h3>
+                    <p>Features: King bed, city view, mini-bar. Capacity: 2 guests. Price: $150/night.</p>
+                    <button class="btn">Book Now</button>
+                </div>
+            </div>
+            <div class="room">
+                <img src="" alt="Suite">
+                <div class="room-content">
+                    <h3>Suite</h3>
+                    <p>Features: Separate living area, balcony, jacuzzi. Capacity: 4 guests. Price: $250/night.</p>
+                    <button class="btn">Book Now</button>
+                </div>
+            </div>
+            <!-- Add more rooms as needed -->
+        </div>
+    </section>
+
+    <section id="amenities" class="container">
+        <h2>Amenities & Services</h2>
+        <ul>
+            <li><strong>Restaurant & Dining:</strong> Gourmet meals with local flavors.</li>
+            <li><strong>Spa & Gym:</strong> Relax with massages and workouts.</li>
+            <li><strong>Pool:</strong> Outdoor swimming pool.</li>
+            <li><strong>Room Service:</strong> 24/7 in-room dining.</li>
+            <li><strong>Laundry & Travel Desk:</strong> Convenient services for your stay.</li>
+        </ul>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p>Founded in [Year], [Hotel Name] has been a beacon of hospitality in [City, Country]. Our mission is to provide exceptional experiences with a focus on luxury and comfort.</p>
+        <p>Why choose us? Years of experience, personalized service, and attention to detail.</p>
+    </section>
+
+    <section id="gallery" class="container">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="C:\Users\dhane\OneDrive\Pictures\Hermione granger.jpg" alt="Room">
+            <img src="https://via.placeholder.com/250x200?text=Lobby" alt="Lobby">
+            <img src="https://via.placeholder.com/250x200?text=Restaurant" alt="Restaurant">
+            <img src="https://via.placeholder.com/250x200?text=Surroundings" alt="Surroundings">
+            <!-- Add more images -->
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button class="btn" type="submit">Send Message</button>
+            </form>
+        </div>
+        <p>Phone: +1 234 567 8900 | Email: info@[hotelname].com | Address: 123 Hotel St, [City, Country]</p>
+        <div id="map" style="height: 300px; width: 100%;"><!-- Google Maps Embed -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d-122.419415484681!3d37.774929779759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064c6b3a0b%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1633020000000!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <section id="booking" class="container">
+        <h2>Book Your Stay</h2>
+        <div class="booking-form">
+            <form action="#" method="post">
+                <input type="date" name="checkin" required>
+                <input type="date" name="checkout" required>
+                <select name="guests">
+                    <option>1 Guest</option>
+                    <option>2 Guests</option>
+                    <option>3 Guests</option>
+                    <option>4 Guests</option>
+                </select>
+                <select name="room">
+                    <option>Deluxe Room</option>
+                    <option>Suite</option>
+                </select>
+                <button class="btn" type="submit">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Customer Reviews (Optional) -->
+    <section class="container">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <p>"Amazing stay! Highly recommend." - John Doe ★★★★★</p>
+        </div>
+        <!-- Add more reviews -->
+    </section>
+
+    <a href="https://wa.me/1234567890" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+
+    <footer>
+        <p>&copy; 2023 [Hotel Name]. All rights reserved.</p>
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Multi-language support (basic example, can be expanded)
+        const translations = {
+            en: { home: "Home", rooms: "Rooms & Suites" },
+            es: { home: "Inicio", rooms: "Habitaciones y Suites" }
+        };
+        function changeLanguage(lang) {
+            // Implement language switching logic
+        }
+    </script>
+</body>
+</html>
