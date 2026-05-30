@@ -8,40 +8,32 @@
 
 using namespace std;
 
-class Stack{
-  public:
-    vector<int> v;
+bool isvlide(string str){
 
-    public:
-     
-    void push(int val){
-      v.push_back(val);
+  stack<char>st;
+
+  for(int i=0;i<str.size();i++){
+    if(str[i] =='(' || str[i] == '{' || str[i] == '['){ //opening
+      st.push(str[i]);
+    }else{
+      if(st.size()==0){ //machting the string
+        return false;
+      }if((st.top() == '(' && str[i]==')') ||
+            (st.top()=='{' && str[i] =='}') ||
+          (st.top() =='[' && str[i]==']')){
+            st.pop();
+          }else{
+            return false;
+          }
     }
-
-    void pop(){
-      v.pop_back();
-    }
-
-    int top(){
-      return v[v.size()-1];
-    }
-
-    bool empty(){
-      return v.size() ==0;
-    }
-};
-
-int main(){
-  Stack s;
-  s.push(10);
-  s.push(20);
-  s.push(30);
-
-  while(!s.empty() ){
-    cout<<s.top()<<endl;
-    s.pop();
   }
+  return st.size() == 0;
+}
+int main(){
+  string str ="([{])";
+  // cout<<"enter the string : ";
+  // cin>>str;
 
+  cout<<isvlide(str);
   return 0;
-
 }
