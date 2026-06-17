@@ -8,30 +8,43 @@
 
 using namespace std;
 
-int main(){
-  vector<int>arr = {3,1,0,8,6};
+int getcelebrity(vector<vector<int>>& arr){
+
+  int n = arr.size();
 
   stack<int>s;
-  vector<int>ans(arr.size(),0);
-
-  for(int i=0; i<arr.size();i++){
-    while(s.size()>0 && s.top() >= arr[i]){
+  for(int i =0;i<n;i++){
+    s.push(i);
+  }
+  
+  while(s.size()>1){
+    int i = s.top();
       s.pop();
-    }
-    if(s.empty()){
-      ans[i]=-1;
-    }else{
-      ans[i]= s.top();
-    }
 
-    s.push(arr[i]);
+     int j=s.top();
+     s.pop();
+
+     if(arr[i][j]==0){
+      s.push(i);
+     }else{
+      s.push(j);
+     }
   }
 
- //print the answer
- for(int val : ans){
-  cout<<val<<" ";
- }
- cout<<endl;
- 
-  return 0; 
+  int celeb = s.top();
+
+  for(int i=0;i<n;i++){
+    if((i!=celeb) && (arr[i][celeb]==0 || arr[celeb][i]==1)){
+      return -1;
+    }
+  }
+  return celeb;
+}
+
+int main(){
+  vector<vector<int>> arr = {{0,1,0},{0,0,0},{0,1,0}};
+
+  cout<<getcelebrity(arr)<<endl;
+
+  return 0;
 }
